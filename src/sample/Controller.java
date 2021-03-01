@@ -7,6 +7,9 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -14,6 +17,11 @@ public class Controller implements Initializable {
     ToggleGroup aaa;
     @FXML
     RadioButton hVSh, hVSc, cVSc;
+    @FXML
+    Button b00, b01, b02, b10, b11, b12, b20, b21, b22;
+
+    List<Button> botonsicos = new ArrayList<>(Arrays.asList(b00, b01, b02, b10, b11, b12, b20, b21, b22));
+
     boolean turn = true;
 
     public void onClick(javafx.event.ActionEvent actionEvent){
@@ -21,7 +29,7 @@ public class Controller implements Initializable {
         RadioButton rb = (RadioButton)aaa.getSelectedToggle();
         if (rb!=null) {
             if (hVSh.isSelected()) hVSh(actionEvent);
-            if (hVSc.isSelected()) hVSh(actionEvent);
+            if (hVSc.isSelected()) hVSc(actionEvent);
             if (cVSc.isSelected()) hVSh(actionEvent);
         }
 
@@ -52,4 +60,28 @@ public class Controller implements Initializable {
         }
     }
 
-}
+    public void hVSc(javafx.event.ActionEvent actionEvent) {
+        Button b = (Button) actionEvent.getSource();
+        Button botonsico;
+        boolean valid = false;
+
+        if (b.getText().equals("")){
+                b.setText("X");
+
+
+                while (!valid){
+                    int randomNum = (int) (Math.random() * 8);
+                    botonsico = botonsicos.get(randomNum);
+
+                    if (botonsico.getText().equals("")){
+                        botonsico.setText("O");
+                        valid = true;
+                    }
+
+                }
+                }
+
+                }
+
+    }
+

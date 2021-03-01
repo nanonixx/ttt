@@ -20,57 +20,57 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button id="b00" mnemonicParsing="false" onAction="#onClick" prefHeight="169.0" prefWidth="120.0" >
+            <Button id="b00" fx:id="b00" mnemonicParsing="false" onAction="#onClick" prefHeight="169.0" prefWidth="120.0">
                 <font>
                     <Font size="48.0" />
                 </font></Button>
-            <Button id="b10" mnemonicParsing="false" onAction="#onClick" prefHeight="131.0" prefWidth="120.0" GridPane.columnIndex="1">
+            <Button id="b10" fx:id="b10" mnemonicParsing="false" onAction="#onClick" prefHeight="131.0" prefWidth="120.0" GridPane.columnIndex="1">
                <font>
                   <Font size="48.0" />
                </font></Button>
-            <Button id="b20" mnemonicParsing="false" onAction="#onClick" prefHeight="117.0" prefWidth="120.0" GridPane.columnIndex="2" >
+            <Button id="b20" fx:id="b20" mnemonicParsing="false" onAction="#onClick" prefHeight="117.0" prefWidth="120.0" GridPane.columnIndex="2">
                 <font>
                     <Font size="48.0" />
                 </font></Button>
-            <Button id="b01" mnemonicParsing="false" onAction="#onClick" prefHeight="152.0" prefWidth="120.0" GridPane.rowIndex="1">
+            <Button id="b01" fx:id="b01" mnemonicParsing="false" onAction="#onClick" prefHeight="152.0" prefWidth="120.0" GridPane.rowIndex="1">
                 <font>
                     <Font size="48.0" />
                 </font></Button>
-            <Button id="b11" mnemonicParsing="false" onAction="#onClick" prefHeight="114.0" prefWidth="120.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button id="b11" fx:id="b11" mnemonicParsing="false" onAction="#onClick" prefHeight="114.0" prefWidth="120.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                 <font>
                     <Font size="48.0" />
                 </font></Button>
-            <Button id="b21" mnemonicParsing="false" onAction="#onClick" prefHeight="178.0" prefWidth="120.0" GridPane.columnIndex="2" GridPane.rowIndex="1" >
+            <Button id="b21" fx:id="b21" mnemonicParsing="false" onAction="#onClick" prefHeight="178.0" prefWidth="120.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                 <font>
                     <Font size="48.0" />
                 </font></Button>
-            <Button id="b02" mnemonicParsing="false" onAction="#onClick" prefHeight="139.0" prefWidth="120.0" GridPane.rowIndex="2">
+            <Button id="b02" fx:id="b02" mnemonicParsing="false" onAction="#onClick" prefHeight="139.0" prefWidth="120.0" GridPane.rowIndex="2">
                 <font>
                     <Font size="48.0" />
                 </font></Button>
-            <Button id="b12" mnemonicParsing="false" onAction="#onClick" prefHeight="112.0" prefWidth="120.0" GridPane.columnIndex="1" GridPane.rowIndex="2" >
+            <Button id="b12" fx:id="b12" mnemonicParsing="false" onAction="#onClick" prefHeight="112.0" prefWidth="120.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                 <font>
                     <Font size="48.0" />
                 </font></Button>
-            <Button id="b22" mnemonicParsing="false" onAction="#onClick" prefHeight="134.0" prefWidth="120.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <Button id="b22" fx:id="b22" mnemonicParsing="false" onAction="#onClick" prefHeight="134.0" prefWidth="120.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
                 <font>
                     <Font size="48.0" />
-                </font><
+                </font>
             </Button>
          </children>
       </GridPane>
       <AnchorPane layoutX="360.0" layoutY="86.0" prefHeight="200.0" prefWidth="239.0">
          <children>
-            <RadioButton id="hVSc" layoutX="68.0" layoutY="39.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="137.0" text="Player vs CPU">
+            <RadioButton id="hVSc" fx:id="hVSc" layoutX="68.0" layoutY="39.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="137.0" text="Player vs CPU">
                <toggleGroup>
                   <ToggleGroup fx:id="aaa" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton id="hVSh" layoutX="68.0" layoutY="86.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="160.0" text="Player vs Player" toggleGroup="$aaa" />
-            <RadioButton id="cVSc" layoutX="68.0" layoutY="134.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="120.0" text="CPU vs CPU" toggleGroup="$aaa" />
+            <RadioButton id="hVSh" fx:id="hVSh" layoutX="68.0" layoutY="86.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="160.0" text="Player vs Player" toggleGroup="$aaa" />
+            <RadioButton id="cVSc" fx:id="cVSc" layoutX="68.0" layoutY="134.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="120.0" text="CPU vs CPU" toggleGroup="$aaa" />
          </children>
       </AnchorPane>
       <MenuBar prefHeight="29.0" prefWidth="600.0">
