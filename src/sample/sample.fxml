@@ -92,6 +92,6 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Button layoutX="443.0" layoutY="286.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="86.0" text="START" textFill="RED" />
+      <Button fx:id="start" layoutX="443.0" layoutY="286.0" mnemonicParsing="false" onAction="#startButton" prefHeight="46.0" prefWidth="86.0" text="START" textFill="RED" />
    </children>
 </AnchorPane>
