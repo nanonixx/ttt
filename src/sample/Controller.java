@@ -2,10 +2,7 @@ package sample;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 
 import java.awt.event.ActionEvent;
 import java.net.URL;
@@ -37,6 +34,10 @@ public class Controller implements Initializable {
             if (hVSc.isSelected()) hVSc(actionEvent);
         }
 
+    }
+
+    public void closeGame(javafx.event.ActionEvent actionEvent) {
+        System.exit(0);
     }
 
     public void startButton() {
@@ -157,18 +158,20 @@ public class Controller implements Initializable {
                             label.setText("O ha ganado!");
                         }
                         valid = true;
-                        turno++;
+
                     }
                 }
+                turno++;
                 if (finish) System.out.println("GAME OVER");
 
             }
         }
+        if (!finish && turno > 4) label.setText("EMPATE");
         }
 
 
         public void cVSc() {
-                while (!finish || turno == 9) {
+                while (!finish && turno < 9) {
 
                     List<Button> botonsicos = new ArrayList<>(Arrays.asList(b00, b01, b02, b10, b11, b12, b20, b21, b22));
                     Button botonsico;
@@ -197,12 +200,13 @@ public class Controller implements Initializable {
                             }
                             valid = true;
                         }
-                        if (finish) System.out.println("GAME OVER");
-                    }
 
+                    }
+                    if (finish) System.out.println("GAME OVER");
                     turno++;
 
                 }
+                if (!finish) label.setText("EMPATE");
 
 
         }
