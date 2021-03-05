@@ -22,7 +22,7 @@ public class Controller implements Initializable {
     @FXML
     Button b00, b01, b02, b10, b11, b12, b20, b21, b22, start;
     @FXML
-    Label win;
+    Label label;
 
 
     boolean turn = true;
@@ -51,6 +51,7 @@ public class Controller implements Initializable {
 
     private void reset() {
         finish = false;
+        label.setText("");
         turno = 0;
         b00.setText("");
         b01.setText("");
@@ -95,6 +96,7 @@ public class Controller implements Initializable {
     public void hVSh(javafx.event.ActionEvent actionEvent) {
         if (!finish) {
 
+
         Button b = (Button) actionEvent.getSource();
 
         if (b.getText().equals("")){
@@ -102,7 +104,7 @@ public class Controller implements Initializable {
                 b.setText("X");
                 if (checkWin("X")){
                     finish = true;
-                    System.out.println("X wins!");
+                    label.setText("X ha ganado!");
                 }
                 turn = !turn;
             }
@@ -110,13 +112,16 @@ public class Controller implements Initializable {
                 b.setText("O");
                 if (checkWin("O")) {
                     finish = true;
-                    System.out.println("O wins!");
-                    //TODO: pasarlo a un label
+                    label.setText("O ha ganado!");
                 }
                 turn = !turn;
             }
 
             if (finish) System.out.println("GAME OVER");
+            else {
+                if (turn) label.setText("Turno de X");
+                else label.setText("Turno de O");
+            }
 
         }
 
@@ -137,6 +142,7 @@ public class Controller implements Initializable {
                 if (checkWin("X")) {
                     finish = true;
                     System.out.println("X wins!");
+                    label.setText("X ha ganado!");
                 }
 
 
@@ -148,8 +154,7 @@ public class Controller implements Initializable {
                         botonsico.setText("O");
                         if (checkWin("O")) {
                             finish = true;
-                            System.out.println("O wins!");
-                            //TODO: pasarlo a un label
+                            label.setText("O ha ganado!");
                         }
                         valid = true;
                         turno++;
@@ -179,15 +184,14 @@ public class Controller implements Initializable {
                                 botonsico.setText("X");
                                 if (checkWin("X")){
                                     finish = true;
-                                    System.out.println("X wins!");
+                                    label.setText("X ha ganado!");
                                 }
                                 turn = !turn;
                             } else {
                                 botonsico.setText("O");
                                 if (checkWin("O")) {
                                     finish = true;
-                                    System.out.println("O wins!");
-                                    //TODO: pasarlo a un label
+                                    label.setText("O ha ganado!");
                                 }
                                 turn = !turn;
                             }
