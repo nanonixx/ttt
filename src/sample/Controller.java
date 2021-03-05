@@ -79,7 +79,7 @@ public class Controller implements Initializable {
         //diagonales
 
         else if (b00.getText().equals(letra) && b11.getText().equals(letra) && b22.getText().equals(letra) ) return true;
-        else if (b20.getText().equals(letra) && b11.getText().equals(letra) && b20.getText().equals(letra) ) return true;
+        else if (b02.getText().equals(letra) && b11.getText().equals(letra) && b20.getText().equals(letra) ) return true;
 
         else return false;
 
@@ -93,84 +93,115 @@ public class Controller implements Initializable {
 
 
     public void hVSh(javafx.event.ActionEvent actionEvent) {
+        if (!finish) {
+
         Button b = (Button) actionEvent.getSource();
 
         if (b.getText().equals("")){
             if (turn) {
                 b.setText("X");
-                if (checkWin("X")) finish = true;
+                if (checkWin("X")){
+                    finish = true;
+                    System.out.println("X wins!");
+                }
                 turn = !turn;
             }
             else {
                 b.setText("O");
-                if (checkWin("O")) finish = true;
+                if (checkWin("O")) {
+                    finish = true;
+                    System.out.println("O wins!");
+                    //TODO: pasarlo a un label
+                }
                 turn = !turn;
             }
 
-            if (finish) System.out.println("win!");
+            if (finish) System.out.println("GAME OVER");
+
+        }
 
         }
     }
 
     public void hVSc(javafx.event.ActionEvent actionEvent) {
-        Button b = (Button) actionEvent.getSource();
-        Button botonsico;
-        boolean valid = false;
-        List<Button> botonsicos = new ArrayList<>(Arrays.asList(b00, b01, b02, b10, b11, b12, b20, b21, b22));
+        if (!finish) {
+            Button b = (Button) actionEvent.getSource();
+            Button botonsico;
+            boolean valid = false;
+            List<Button> botonsicos = new ArrayList<>(Arrays.asList(b00, b01, b02, b10, b11, b12, b20, b21, b22));
 
 
-        if (b.getText().equals("")){
+            if (b.getText().equals("")) {
                 b.setText("X");
 
+                if (checkWin("X")) {
+                    finish = true;
+                    System.out.println("X wins!");
+                }
 
-                while (!valid && turno <= 3){
+
+                while (!valid && turno <= 3) {
                     int randomNum = (int) (Math.random() * 9);
                     botonsico = botonsicos.get(randomNum);
 
-                    if (botonsico.getText().equals("")){
+                    if (botonsico.getText().equals("")) {
                         botonsico.setText("O");
+                        if (checkWin("O")) {
+                            finish = true;
+                            System.out.println("O wins!");
+                            //TODO: pasarlo a un label
+                        }
                         valid = true;
                         turno++;
                     }
-
                 }
-                }
+                if (finish) System.out.println("GAME OVER");
 
+            }
+        }
         }
 
 
         public void cVSc() {
-            while (turno < 9){
+                while (!finish || turno == 9) {
 
-            List<Button> botonsicos = new ArrayList<>(Arrays.asList(b00, b01, b02, b10, b11, b12, b20, b21, b22));
-            Button botonsico;
+                    List<Button> botonsicos = new ArrayList<>(Arrays.asList(b00, b01, b02, b10, b11, b12, b20, b21, b22));
+                    Button botonsico;
 
-            boolean valid = false;
+                    boolean valid = false;
 
-            while(!valid){
-                int randomNum = (int) (Math.random() * 9);
-                botonsico = botonsicos.get(randomNum);
+                    while (!valid) {
+                        int randomNum = (int) (Math.random() * 9);
+                        botonsico = botonsicos.get(randomNum);
 
-            if (botonsico.getText().equals("")) {
-                if (turn) {
-                    botonsico.setText("X");
-                    turn = !turn;
-                } else {
-                    botonsico.setText("O");
-                    turn = !turn;
+                        if (botonsico.getText().equals("")) {
+                            if (turn) {
+                                botonsico.setText("X");
+                                if (checkWin("X")){
+                                    finish = true;
+                                    System.out.println("X wins!");
+                                }
+                                turn = !turn;
+                            } else {
+                                botonsico.setText("O");
+                                if (checkWin("O")) {
+                                    finish = true;
+                                    System.out.println("O wins!");
+                                    //TODO: pasarlo a un label
+                                }
+                                turn = !turn;
+                            }
+                            valid = true;
+                        }
+                        if (finish) System.out.println("GAME OVER");
+                    }
+
+                    turno++;
+
                 }
-                valid = true;
-            }
-
-                //TODO método checkWin
-            }
-                turno++;
-
-            }
-
-            }
 
 
+        }
 
         }
 
