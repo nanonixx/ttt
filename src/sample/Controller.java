@@ -41,7 +41,7 @@ public class Controller implements Initializable {
     }
 
     public void startButton() {
-        reset();
+        reset(); //funciona como boton de reset
 
         RadioButton rb = (RadioButton)aaa.getSelectedToggle();
         if (rb!=null) {
@@ -95,19 +95,22 @@ public class Controller implements Initializable {
 
 
     public void hVSh(javafx.event.ActionEvent actionEvent) {
+        //humano vs humano
         if (!finish) {
 
 
         Button b = (Button) actionEvent.getSource();
 
+        //si la casilla está vacía
         if (b.getText().equals("")){
             if (turn) {
                 b.setText("X");
+                //comprobar si con esta jugada se gana la partida
                 if (checkWin("X")){
                     finish = true;
                     label.setText("X ha ganado!");
                 }
-                turn = !turn;
+                turn = !turn; //cambio de turno
             }
             else {
                 b.setText("O");
@@ -118,8 +121,7 @@ public class Controller implements Initializable {
                 turn = !turn;
             }
 
-            if (finish) System.out.println("GAME OVER");
-            else {
+            if (!finish){
                 if (turn) label.setText("Turno de X");
                 else label.setText("Turno de O");
             }
@@ -130,6 +132,7 @@ public class Controller implements Initializable {
     }
 
     public void hVSc(javafx.event.ActionEvent actionEvent) {
+        //humano vs cpu
         if (!finish) {
             Button b = (Button) actionEvent.getSource();
             Button botonsico;
@@ -142,13 +145,14 @@ public class Controller implements Initializable {
 
                 if (checkWin("X")) {
                     finish = true;
-                    System.out.println("X wins!");
                     label.setText("X ha ganado!");
                 }
 
-
+                //turno de la maquina
+                //valid= casilla jugable
                 while (!valid && turno <= 3) {
                     int randomNum = (int) (Math.random() * 9);
+                    //elige una casilla random
                     botonsico = botonsicos.get(randomNum);
 
                     if (botonsico.getText().equals("")) {
@@ -171,6 +175,7 @@ public class Controller implements Initializable {
 
 
         public void cVSc() {
+        //cpu vs cpu
                 while (!finish && turno < 9) {
 
                     List<Button> botonsicos = new ArrayList<>(Arrays.asList(b00, b01, b02, b10, b11, b12, b20, b21, b22));
@@ -202,7 +207,6 @@ public class Controller implements Initializable {
                         }
 
                     }
-                    if (finish) System.out.println("GAME OVER");
                     turno++;
 
                 }
