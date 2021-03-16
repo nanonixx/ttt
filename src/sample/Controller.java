@@ -109,8 +109,10 @@ public class Controller implements Initializable {
                 if (checkWin("X")){
                     finish = true;
                     label.setText("X ha ganado!");
+
                 }
                 turn = !turn; //cambio de turno
+                turno++;
             }
             else {
                 b.setText("O");
@@ -119,6 +121,7 @@ public class Controller implements Initializable {
                     label.setText("O ha ganado!");
                 }
                 turn = !turn;
+                turno++;
             }
 
             if (!finish){
@@ -127,9 +130,11 @@ public class Controller implements Initializable {
             }
 
         }
+            if (!finish && turno ==9) label.setText("EMPATE");
+        }
 
         }
-    }
+
 
     public void hVSc(javafx.event.ActionEvent actionEvent) {
         //humano vs cpu
@@ -166,11 +171,11 @@ public class Controller implements Initializable {
                     }
                 }
                 turno++;
-                if (finish) System.out.println("GAME OVER");
 
             }
+            if (!finish && turno > 4) label.setText("EMPATE");
         }
-        if (!finish && turno > 4) label.setText("EMPATE");
+
         }
 
 

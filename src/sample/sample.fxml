@@ -7,7 +7,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane stylesheets="/sample/sample.css" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="/sample/sample.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <GridPane layoutY="31.0" prefHeight="310.0" prefWidth="360.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="60.0">
         <columnConstraints>
@@ -92,7 +92,7 @@
          </effect></Button>
       <Label fx:id="label" alignment="TOP_CENTER" layoutX="400.0" layoutY="72.0" prefHeight="29.0" prefWidth="173.0" text="Modo de juego:" textAlignment="CENTER">
          <font>
-            <Font name="Calibri Light" size="23.0" />
+            <Font size="19.0" />
          </font>
       </Label>
    </children>
